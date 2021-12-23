@@ -14,38 +14,24 @@
 				<div class="card-body">
 					<form action="" method="post" class="needs-validation" novalidate>
 						<div class="form-group">
-							<label for="nama_mhs">Nama Barang</label>
-							<input type="text" class="form-control" name="nama_mhs" id="nama_mhs" placeholder="Masukan nama mahasiswa" autocomplete="off" required>
+							<label for="nama_brg">Nama Barang</label>
+							<input type="text" class="form-control" name="nama_brg" id="nama_brg" placeholder="Masukan nama barang" autocomplete="off" required>
 							<div class="invalid-feedback">
-								Anda belum memasukan nama mahasiswa.
+								Anda belum memasukan nama barang.
 							</div>
 						</div>
 						<div class="form-group">
-							<label for="n_pert1">Nilai Pert 1</label>
-							<input type="n_pert1" class="form-control" name="n_pert1" id="n_pert1" placeholder="Masukan nilai pertemuan 1" autocomplete="off" required>
+							<label for="harga">Harga Barang</label>
+							<input type="harga" class="form-control" name="harga" id="harga" placeholder="Masukan harga barang" autocomplete="off" required>
 							<div class="invalid-feedback">
-								Anda belum memasukan nilai pertemuan 1.
+								Anda belum memasukkan harga
 							</div>
 						</div>
 						<div class="form-group">
-							<label for="n_pert2">Nilai Pert 2</label>
-							<input type="n_pert2" class="form-control" name="n_pert2" id="n_pert2" placeholder="Masukan nilai pertemuan 2" autocomplete="off" required>
+							<label for="kuantitas">Kuantitas</label>
+							<input type="kuantitas" class="form-control" name="kuantitas" id="kuantitas" placeholder="Masukan jumlah barang" autocomplete="off" required>
 							<div class="invalid-feedback">
-								Anda belum memasukan nilai pertemuan 2.
-							</div>
-						</div>
-						<div class="form-group">
-							<label for="n_pert3">Nilai Pert 3</label>
-							<input type="n_pert3" class="form-control" name="n_pert3" id="n_pert3" placeholder="Masukan nilai pertemuan 3" autocomplete="off" required>
-							<div class="invalid-feedback">
-								Anda belum memasukan nilai pertemuan 3.
-							</div>
-						</div>
-						<div class="form-group">
-							<label for="n_pert4">Nilai Pert 4</label>
-							<input type="n_pert4" class="form-control" name="n_pert4" id="n_pert4" placeholder="Masukan nilai pertemuan 4" autocomplete="off" required>
-							<div class="invalid-feedback">
-								Anda belum memasukan nilai pertemuan 4.
+								Anda belum memasukkan jumlah barang
 							</div>
 						</div>
 						<div class="text-center">

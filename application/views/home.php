@@ -43,10 +43,10 @@
         <td class="align-middle"><?= $data['nama_barang'] ?></td>
         <td class="align-middle text-center"><?= $data['harga'] ?></td>
         <td class="align-middle text-center"><?= $data['kuantitas'] ?></td>
-        <td class="align-middle text-center"><?= $data['total_harga'] ?></td>
+        <td class="align-middle text-center"><?= $data['total'] ?></td>
         <td class="align-middle text-center">
-          <a href="<?= base_url('pweb/edit/' . $data['id_nilai']) ?>" class="align-middle btn btn-success">Edit</a>
-          <a href="<?= base_url('pweb/delete/' . $data['id_nilai']) ?>" class="align-middle btn btn-danger" onclick="return confirm('Data ini akan dihapus. Anda yakin ?')">
+          <a href="<?= base_url('pweb/edit/' . $data['id']) ?>" class="align-middle btn btn-success">Edit</a>
+          <a href="<?= base_url('pweb/delete/' . $data['id']) ?>" class="align-middle btn btn-danger" onclick="return confirm('Data ini akan dihapus. Anda yakin ?')">
             Hapus
           </a>
         </td>

@@ -13,7 +13,7 @@
                                 <div class="card-header text-center">Edit Data</div>
                                 <div class="card-body">
                                         <form action="" method="post" class="needs-validation" novalidate>
-                                                <input type="hidden" name="id_nilai" value="<?= $nilai['id_nilai'] ?>">
+                                                <input type="hidden" name="id" value="<?= $nilai['id'] ?>">
                                                 <div class="form-group">
                                                         <label for="nama_brg">Nama Barang</label>
                                                         <input type="text" class="form-control" name="nama_brg" id="nama_brg" placeholder="Masukan nama barang" autocomplete="off" required value="<?= $nilai['nama_barang'] ?>">

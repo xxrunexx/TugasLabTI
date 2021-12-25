@@ -6,35 +6,23 @@ class M_pweb extends CI_Model
 {
   public function read()
   {
-    $this->db->order_by('nama_mahasiswa', 'desc');
-    return $this->db->get('tbl_nilai')->result_array();
+    $this->db->order_by('nama_barang', 'desc');
+    return $this->db->get('tbl_produk')->result_array();
   }
   public function create()
   {
-    $nilai1 = $this->input->post('n_pert1');
-    $nilai2 = $this->input->post('n_pert2');
-    $nilai3 = $this->input->post('n_pert3');
-    $nilai4 = $this->input->post('n_pert4');
-    $rata = ($nilai1 + $nilai2 + $nilai3 + $nilai4) / 4;
-    if ($rata <= 75) {
-      $keterangan = "Tidak Lulus";
-    } elseif ($rata >= 75) {
-      $keterangan = "Lulus";
-    } else {
-      $keterangan = "Nilai Tidak Valid";
-    }
+    $kuantitas = $this->input->post('kuantitas');
+    $harga = $this->input->post('harga');
+    $total = $this->input->post('total');
 
     $data = [
-      'nama_mahasiswa' => $this->input->post('nama_mhs'),
-      'nilai1' => $nilai1,
-      'nilai2' => $nilai2,
-      'nilai3' => $nilai3,
-      'nilai4' => $nilai4,
-      'rata' => $rata,
-      'keterangan' => $keterangan
+      'nama_barang' => $this->input->post('nama_brg'),
+      'kuantitas' => $kuantitas,
+      'harga' => $harga,
+      'total' => $total,
     ];
 
-    $this->db->insert('tbl_nilai', $data);
+    $this->db->insert('tbl_produk', $data);
     if ($this->db->affected_rows() > 0) {
       $this->session->set_flashdata('pesan', 'Ditambah');
       redirect('pweb', 'refresh');
@@ -43,36 +31,24 @@ class M_pweb extends CI_Model
 
   function get_row($id)
   {
-    return $this->db->get_where('tbl_nilai', ['id_nilai' => $id])->row_array();
+    return $this->db->get_where('tbl_produk', ['id' => $id])->row_array();
   }
 
   function update()
   {
-    $nilai1 = $this->input->post('n_pert1');
-    $nilai2 = $this->input->post('n_pert2');
-    $nilai3 = $this->input->post('n_pert3');
-    $nilai4 = $this->input->post('n_pert4');
-    $rata = ($nilai1 + $nilai2 + $nilai3 + $nilai4) / 4;
-    if ($rata <= 75) {
-      $keterangan = "Tidak Lulus";
-    } elseif ($rata >= 75) {
-      $keterangan = "Lulus";
-    } else {
-      $keterangan = "Nilai Tidak Valid";
-    }
+    $kuantitas = $this->input->post('kuantitas');
+    $harga = $this->input->post('harga');
+    $total = $this->input->post('total');
 
     $data = [
-      'nama_mahasiswa' => $this->input->post('nama_mhs'),
-      'nilai1' => $nilai1,
-      'nilai2' => $nilai2,
-      'nilai3' => $nilai3,
-      'nilai4' => $nilai4,
-      'rata' => $rata,
-      'keterangan' => $keterangan
+      'nama_barang' => $this->input->post('nama_brg'),
+      'kuantitas' => $kuantitas,
+      'harga' => $harga,
+      'total' => $total,
     ];
 
-    $this->db->where('id_nilai', $this->input->post('id_nilai'));
-    $this->db->update('tbl_nilai', $data);
+    $this->db->where('id', $this->input->post('id'));
+    $this->db->update('tbl_produk', $data);
     if ($this->db->affected_rows() > 0) {
       $this->session->set_flashdata('pesan', 'Diubah');
       redirect('pweb', 'refresh');
@@ -81,11 +57,39 @@ class M_pweb extends CI_Model
 
   function hapus($id)
   {
-    $this->db->where('id_nilai', $id);
-    $this->db->delete('tbl_nilai',);
+    $this->db->where('id', $id);
+    $this->db->delete('tbl_produk',);
     if ($this->db->affected_rows() > 0) {
       $this->session->set_flashdata('pesan', 'Dihapus');
       redirect('pweb', 'refresh');
     }
   }
 }
+
+
+// ARCHIEVE
+
+// function update()
+//   {
+//     $nilai1 = $this->input->post('n_pert1');
+//     $nilai2 = $this->input->post('n_pert2');
+//     $nilai3 = $this->input->post('n_pert3');
+//     $nilai4 = $this->input->post('n_pert4');
+//     $rata = ($nilai1 + $nilai2 + $nilai3 + $nilai4) / 4;
+
+//     $data = [
+//       'nama_mahasiswa' => $this->input->post('nama_mhs'),
+//       'nilai1' => $nilai1,
+//       'nilai2' => $nilai2,
+//       'nilai3' => $nilai3,
+//       'nilai4' => $nilai4,
+//       'rata' => $rata,
+//     ];
+
+//     $this->db->where('id', $this->input->post('id'));
+//     $this->db->update('tbl_produk', $data);
+//     if ($this->db->affected_rows() > 0) {
+//       $this->session->set_flashdata('pesan', 'Diubah');
+//       redirect('pweb', 'refresh');
+//     }
+//   }

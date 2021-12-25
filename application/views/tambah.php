@@ -34,6 +34,13 @@
 								Anda belum memasukkan jumlah barang
 							</div>
 						</div>
+						<div class="form-group">
+							<label for="kuantitas">Total Harga</label>
+							<input type="kuantitas" class="form-control" name="total" id="total" placeholder="Masukan Total Harga" autocomplete="off" required>
+							<div class="invalid-feedback">
+								Anda belum memasukkan Total Harga
+							</div>
+						</div>
 						<div class="text-center">
 							<button type="submit" class="btn btn-primary text-center px-3 py-2" name="tambah">Tambah</button>
 						</div>
